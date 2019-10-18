@@ -2,23 +2,20 @@ function init(){
     const video = document.getElementById('video')
     const canvas = document.getElementById('canvas')
     const context = canvas.getContext('2d')
-    const faceTracker = new tracking.ObjectTracker('face')
-    const eyeTracker = new tracking.ObjectTracker('eye')
-    tracking.track('#video', faceTracker, {camera: true})
-    tracking.track('#video', eyeTracker, {camera: true})
+    const tracker = new tracking.ObjectTracker(['face'])
 
-    //track face
-    faceTracker.on('track', event => {
+    tracking.track('#video', tracker , {camera: true})
+    tracker.on('track', event => {
         //console.log(event);
-        context.clearRect(0,0,canvas.clientWidth,canvas.height)
-        event.data.forEach(
-            rect => {
-                context.strokeStyle = '#ff0000'
-                context.clientWidth = 2
-                context.strokeRect(rect.x, rect.y, rect.width, rect.height)
-                context.fillText("rosto", rect.x+rect.width+20,rect.y+20)
-            }
-        )
+        context.clearRect(0,0,canvas.width,canvas.height)
+        event.data.forEach( rect => {
+            context.strokeStyle = '#FF0000'
+            context.lineWidth = 2
+            context.strokeRect(rect.x, rect.y, rect.width, rect.height)
+            context.fillText("Rosto: ", rect.x+rect.width+20,rect.y+20)
+            context.fillText(`x: ${rect.x}, w: ${rect.width}`, rect.x+rect.width+20,rect.y+40)
+            context.fillText(`y: ${rect.y}, h: ${rect.height}`, rect.x+rect.width+20,rect.y+60)
+        })
     })
 }
 

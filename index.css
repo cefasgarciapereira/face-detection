@@ -1,10 +1,11 @@
-#video, #canvas{
-    position: absolute;
+*{
+    color: white;
+    font-family: 'Share Tech Mono', monospace;
 }
 
 body{
     display: flex;
-    flex-direction: row;
+    flex-direction: column;
     align-content: center;
     justify-content: center;
     align-items: center;
@@ -12,6 +13,14 @@ body{
     height: 100vh;
     background: #333;
     overflow: hidden;
+    background: linear-gradient(rgba(0,0,0,.7), rgba(0,0,0,.7)), url("https://i2.wp.com/hdwallpapers.cc/wp-content/uploads/wallpapers/1135/techn.png?fit=3840%2C2990&ssl=1");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+#video, #canvas{
+    position: absolute;
 }
 
 .video-wrapper{
@@ -21,7 +30,7 @@ body{
     justify-content: center;
     align-items: center;
     justify-items: center;
-    width:320;
-    height: 240;
-    box-shadow: 25px 25px 25px 25px rgba(0,0,0,.3);
+    box-shadow: 25px 25px 100px 0px rgba(0,0,0,.3);
+    height: 540;
+    width: 720;
 }
