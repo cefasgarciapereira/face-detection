@@ -1,0 +1,27 @@
+#video, #canvas{
+    position: absolute;
+}
+
+body{
+    display: flex;
+    flex-direction: row;
+    align-content: center;
+    justify-content: center;
+    align-items: center;
+    justify-items: center;
+    height: 100vh;
+    background: #333;
+    overflow: hidden;
+}
+
+.video-wrapper{
+    display: flex;
+    flex-direction: row;
+    align-content: center;
+    justify-content: center;
+    align-items: center;
+    justify-items: center;
+    width:320;
+    height: 240;
+    box-shadow: 25px 25px 25px 25px rgba(0,0,0,.3);
+}
